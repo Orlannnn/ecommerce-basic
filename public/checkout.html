@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 pt-20">
+
+  <!-- Navbar -->
+  <nav class="bg-white fixed w-full z-10 top-0 border-b border-gray-200">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="home.html" class="text-2xl font-bold text-black">Rice's Store</a>
+      <div class="flex space-x-4">
+       <div class="flex md:order-2 items-center space-x-2 rtl:space-x-reverse">
+ <a href="/public/keranjang.html">
+<img src="/aset/cart.png" class="w-10 h-10 rounded-full object-cover ml-4 mt-2 " alt="">
+</a> 
+<a href="profile.html">
+ <img src="/aset/download (4).jpeg" class="w-10 h-10 rounded-full object-cover ml-4 mt-2" alt="Profile" />
+ </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Container -->
+  <div class="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Detail Checkout</h2>
+
+    <!-- Produk -->
+    <div class="space-y-4 mb-6" id="checkout-items">
+      <!-- Item dinamis dari JavaScript -->
+    </div>
+
+    <!-- Informasi Pembeli -->
+    <h3 class="text-xl font-bold mb-4 text-gray-800">Informasi Pembeli</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <input type="text" id="nama-pembeli" placeholder="Nama Lengkap" class="border p-3 rounded-md w-full" />
+      <input type="text" id="telepon" placeholder="Nomor Telepon" class="border p-3 rounded-md w-full" />
+      <input type="text" id="alamat" placeholder="Alamat Lengkap" class="border p-3 rounded-md w-full md:col-span-2" />
+    </div>
+
+    <!-- Detail Pembayaran -->
+    <h3 class="text-xl font-bold mb-4 text-gray-800">Detail Pembayaran</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <select class="border p-3 rounded-md w-full" id="payment-method">
+        <option value="">Pilih Metode Pembayaran</option>
+        <option value="credit">Kartu Kredit</option>
+        <option value="bank">Transfer Bank</option>
+        <option value="cod">Bayar di Tempat (COD)</option>
+      </select>
+
+      <input type="text" id="card-name" placeholder="Nama Pemilik Kartu" class="border p-3 rounded-md w-full" />
+      <input type="text" id="card-number" placeholder="Nomor Kartu" class="border p-3 rounded-md w-full" />
+      <div class="grid grid-cols-2 gap-2">
+        <input type="text" placeholder="MM/YY" class="border p-3 rounded-md w-full" />
+        <input type="text" placeholder="CVV" class="border p-3 rounded-md w-full" />
+      </div>
+    </div>
+
+    <!-- Ringkasan & Button -->
+    <div class="flex justify-between items-center border-t pt-4">
+      <div class="text-xl font-bold text-gray-700">
+        Total: <span id="checkout-total">Rp 0</span>
+      </div>
+      <button id="bayar" class="bg-white text-black outline-black outline-2  px-6 py-3 rounded-lg">Bayar Sekarang</button>
+    </div>
+  </div>
+
+  <script src="/script/detailcheckout.js"></script>
+  
+</body>
+</html>
